@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Services - Adetayo Abdul-Sabuur.A</title>
+  <meta content="Services offered by Adetayo Abdul-Sabuur.A - UI/UX Design, Web Development, and more" name="description">
+  <meta content="Adetayo, Abdul-Sabuur, services, UI/UX design, web development, portfolio" name="keywords">
+
+  <link href="assets/img/favicon.png" rel="icon">
+  
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+ 
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Custom Services Page Styles -->
+  <style>
+    .service-card {
+      background: white;
+      border-radius: 15px;
+      padding: 40px 30px;
+      text-align: center;
+      height: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      position: relative;
+    }
+    
+    .service-icon i {
+      font-size: 2.5rem;
+      color: white;
+    }
+    
+    .service-icon::after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 50%;
+      background: rgba(102, 126, 234, 0.2);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.2);
+        opacity: 0;
+      }
+    }
+    
+    .service-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    
+    .service-description {
+      color: #666;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    
+    .service-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+    
+    .service-features li {
+      padding: 8px 0;
+      padding-left: 30px;
+      position: relative;
+      color: #555;
+    }
+    
+    .service-features li::before {
+      content: '\f26e';
+      font-family: 'bootstrap-icons';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      color: #667eea;
+    }
+    
+    .process-section {
+      background: #f8f9fa;
+      padding: 80px 0;
+      position: relative;
+    }
+    
+    .process-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23f8f9fa" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,133.3C672,117,768,107,864,122.7C960,139,1056,181,1152,181.3C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+      background-size: cover;
+      opacity: 0.5;
+    }
+    
+    .process-timeline {
+      position: relative;
+      padding: 40px 0;
+    }
+    
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #e0e0e0;
+      z-index: 1;
+    }
+    
+    .process-step {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .process-icon {
+      width: 100px;
+      height: 100px;
+      background: white;
+      border: 3px solid #667eea;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .process-step:hover .process-icon {
+      background: #667eea;
+      transform: scale(1.1);
+    }
+    
+    .process-step:hover .process-icon i {
+      color: white;
+    }
+    
+    .process-icon i {
+      font-size: 2rem;
+      color: #667eea;
+      transition: color 0.3s ease;
+    }
+    
+    .process-number {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 30px;
+      height: 30px;
+      background: #764ba2;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    
+    .process-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .process-description {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+      animation: float 20s infinite linear;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .cta-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cta-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .cta-description {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .cta-btn.primary {
+      background: white;
+      color: #667eea;
+    }
+    
+    .cta-btn.primary:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .cta-btn.secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    
+    .cta-btn.secondary:hover {
+      background: white;
+      color: #667eea;
+    }
+    
+    .service-badge {
+      display: inline-block;
+      background: rgba(102, 126, 234, 0.1);
+      color: #667eea;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    
+    @media (max-width: 768px) {
+      .service-card {
+        padding: 30px 20px;
+      }
+      
+      .process-timeline::before {
+        display: none;
+      }
+      
+      .process-step {
+        margin-bottom: 40px;
+      }
+      
+      .cta-title {
+        font-size: 2rem;
+      }
+      
+      .cta-description {
+        font-size: 1rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .cta-btn {
+        width: 80%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body class="services-page">
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Adetayo Abdul-Sabuur.A</h1>
+    </a>
+    <div class="social-links text-center">
+      <a href="https://x.com/ASabuur12?t=z8r18E0S3ebugtlPGjWL7Q&s=09" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.facebook.com/adetayo.abdul.sabuur.olamilekan" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.tiktok.com/@sabuur9?_t=ZS-8yxK3JQpCpL&_r=1" class="tiktok"><i class="bi bi-tiktok"></i></a>
+      <a href="#" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+    </div>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="About.html"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="resume.html"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="portfolio.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="services.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+       
+        <li><a href="contact.html"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Services</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Services</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>My Services</h2>
+        <p>I offer a comprehensive range of digital services to help businesses and individuals establish a strong online presence</p>
+      </div>
+      
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-badge">Most Popular</div>
+              <div class="service-icon">
+            <i class="bi bi-code-slash"></i>
+              </div>
+              <h3 class="service-title">Web Development</h3>
+              <p class="service-description">
+             Building responsive, fast, and secure websites using modern technologies and best practices.
+              <ul class="service-features">
+                <li>Frontend Development</li>
+                <li>Backend Development</li>
+                <li>Database Integration</li>
+                <li>API Development</li>
+                <li>Performance Optimization</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+              <i class="bi bi-palette"></i>
+              </div>
+              <h3 class="service-title">UI/UX Design</h3>
+              <p class="service-description">
+               Creating intuitive and visually appealing user interfaces that enhance user experience and drive engagement.
+             </p>
+              <ul class="service-features">
+                <li>User Research & Analysis</li>
+                <li>Wireframing & Prototyping</li>
+                <li>Interactive Design</li>
+                <li>Usability Testing</li>
+                <li>Design Systems</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-phone"></i>
+              </div>
+              <h3 class="service-title">Responsive Design</h3>
+              <p class="service-description">
+                Ensuring your website looks and functions perfectly across all devices and screen sizes.
+              </p>
+              <ul class="service-features">
+                <li>Mobile-First Approach</li>
+                <li>Cross-Browser Compatibility</li>
+                <li>Touch-Friendly Interfaces</li>
+                <li>Progressive Enhancement</li>
+                <li>Device Testing</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-cart"></i>
+              </div>
+              <h3 class="service-title">E-Commerce Solutions</h3>
+              <p class="service-description">
+                Developing complete online stores with shopping carts, payment integration, and inventory management.
+              </p>
+              <ul class="service-features">
+                <li>Product Catalog Setup</li>
+                <li>Payment Gateway Integration</li>
+                <li>Shopping Cart Development</li>
+                <li>Order Management System</li>
+                <li>Security Implementation</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-graph-up"></i>
+              </div>
+              <h3 class="service-title">SEO Optimization</h3>
+              <p class="service-description">
+                Improving your website's visibility on search engines to attract more organic traffic.
+              </p>
+              <ul class="service-features">
+                <li>Keyword Research</li>
+                <li>On-Page SEO</li>
+                <li>Technical SEO</li>
+                <li>Content Optimization</li>
+                <li>Performance Analytics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-headset"></i>
+              </div>
+              <h3 class="service-title">Maintenance & Support</h3>
+              <p class="service-description">
+                Ongoing support and maintenance to keep your website running smoothly and up-to-date.
+              </p>
+              <ul class="service-features">
+                <li>Regular Updates</li>
+                <li>Security Monitoring</li>
+                <li>Performance Tuning</li>
+                <li>Backup Management</li>
+                <li>Technical Support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process-section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>How I Work</h2>
+        <p>My streamlined process ensures efficient project delivery and client satisfaction</p>
+      </div>
+      
+      <div class="container">
+        <div class="process-timeline">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 process-step">
+              <div class="process-icon">
+                <i class="bi bi-chat-dots"></i>
+                <div class="process-number">1</div>
+              </div>
+              <h3 class="process-title">Discovery</h3>
+              <p class="process-description">
+                Understanding your goals, target audience, and project requirements through detailed discussions and research.
+              </p>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 process-step">
+              <div class="process-icon">
+                <i class="bi bi-pencil"></i>
+                <div class="process-number">2</div>
+              </div>
+              <h3 class="process-title">Planning</h3>
+              <p class="process-description">
+                Creating a detailed project plan with timelines, milestones, and deliverables to ensure clear expectations.
+              </p>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 process-step">
+              <div class="process-icon">
+                <i class="bi bi-gear"></i>
+                <div class="process-number">3</div>
+              </div>
+              <h3 class="process-title">Development</h3>
+              <p class="process-description">
+                Building your project using modern technologies and best practices, with regular progress updates.
+              </p>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 process-step">
+              <div class="process-icon">
+                <i class="bi bi-rocket-takeoff"></i>
+                <div class="process-number">4</div>
+              </div>
+              <h3 class="process-title">Launch & Support</h3>
+              <p class="process-description">
+                Deploying your project and providing ongoing support to ensure its success and growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="cta-section">
+      <div class="container">
+        <div class="cta-content text-center">
+          <h2 class="cta-title">Ready to Start Your Project?</h2>
+          <p class="cta-description">
+            Let's discuss how I can help bring your ideas to life with professional design and development services.
+          </p>
+          <div class="cta-buttons">
+            <a href="quote.html" class="cta-btn primary">
+              <i class="bi bi-envelope"></i> Get a Quote
+            </a>
+            <a href="View Portfolio.html" class="cta-btn secondary">
+              <i class="bi bi-briefcase"></i> View Portfolio
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">@2025</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        Designed by <a href="#">Adetayo Tech Venture</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Contact - Adetayo Abdul-Sabuur.A</title>
+  <meta content="Contact Adetayo Abdul-Sabuur.A for web design and development services" name="description">
+  <meta content="Adetayo, Abdul-Sabuur, contact, web design, development, portfolio" name="keywords">
+
+  <link href="assets/img/favicon.png" rel="icon">
+  
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+ 
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Custom Contact Page Styles -->
+  <style>
+    .contact-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+      animation: float 20s infinite linear;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .contact-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .contact-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .contact-subtitle {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .contact-section {
+      padding: 80px 0;
+      background: #f8f9fa;
+    }
+    
+    .contact-form {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      height: 100%;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    
+    .form-control, .form-select {
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      padding: 12px 15px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus, .form-select:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    }
+    
+    .submit-btn {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    }
+    
+    .contact-info {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      height: 100%;
+    }
+    
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+    
+    .info-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+    
+    .info-icon i {
+      font-size: 1.5rem;
+      color: white;
+    }
+    
+    .info-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    
+    .info-text p {
+      margin: 0;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 40px;
+    }
+    
+    .social-link {
+      width: 50px;
+      height: 50px;
+      background: #f8f9fa;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #667eea;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-5px);
+    }
+    
+    .map-section {
+      padding: 80px 0;
+      background: white;
+    }
+    
+    .map-container {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      height: 400px;
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .faq-section {
+      padding: 80px 0;
+      background: #f8f9fa;
+    }
+    
+    .faq-item {
+      background: white;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    
+    .faq-question {
+      padding: 20px;
+      background: #f8f9fa;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+    
+    .faq-question:hover {
+      background: #e9ecef;
+    }
+    
+    .faq-question i {
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-question.active i {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    
+    .faq-answer.active {
+      padding: 20px;
+      max-height: 500px;
+    }
+    
+    .success-message {
+      display: none;
+      background: #d4edda;
+      color: #155724;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .error-message {
+      display: none;
+      background: #f8d7da;
+      color: #721c24;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #f5c6cb;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-title {
+        font-size: 2rem;
+      }
+      
+      .contact-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .contact-form, .contact-info {
+        padding: 25px;
+      }
+      
+      .info-item {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .info-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body class="contact-page">
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Adetayo Abdul-Sabuur.A</h1>
+    </a>
+    <div class="social-links text-center">
+      <a href="https://x.com/ASabuur12?t=z8r18E0S3ebugtlPGjWL7Q&s=09" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.facebook.com/adetayo.abdul.sabuur.olamilekan" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.tiktok.com/@sabuur9?_t=ZS-8yxK3JQpCpL&_r=1" class="tiktok"><i class="bi bi-tiktok"></i></a>
+      <a href="#" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+    </div>
+     <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="About.html"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="resume.html"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="portfolio.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="services.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+       
+        <li><a href="contact.html"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <div class="container contact-content text-center">
+        <h1 class="contact-title">Get In Touch</h1>
+        <p class="contact-subtitle">
+          Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="contact-form">
+              <h3 class="mb-4">Send Me a Message</h3>
+              
+              <div class="success-message" id="successMessage">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                Thank you! Your message has been sent successfully.
+              </div>
+              
+              <div class="error-message" id="errorMessage">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                Oops! Something went wrong. Please try again later.
+              </div>
+              
+              <form id="contactForm">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Your Name *</label>
+                      <input type="text" class="form-control" id="name" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="form-label">Your Email *</label>
+                      <input type="email" class="form-control" id="email" required>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Subject</label>
+                  <input type="text" class="form-control" id="subject">
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Message *</label>
+                  <textarea class="form-control" id="message" rows="6" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                  <i class="bi bi-send me-2"></i> Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+          
+          <div class="col-lg-4">
+            <div class="contact-info">
+              <h3 class="mb-4">Contact Information</h3>
+              <p>If You Dont Get Quick Response, Kindly Message The Email Directly.</p>
+              
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+                <div class="info-text">
+                  <h3>Location</h3>
+                  <p>No 1. Alatise Close Fatusi Avenue, Olomi Ayegun-Road, IBADAN</p>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="bi bi-telephone"></i>
+                </div>
+                <div class="info-text">
+                  <h3>Phone</h3>
+                  <p>+234 90 3266 3804</p>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="bi bi-envelope"></i>
+                </div>
+                <div class="info-text">
+                  <h3>Email</h3>
+                  <p>adetayotechventure@gmail.com</p>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="bi bi-clock"></i>
+                </div>
+                <div class="info-text">
+                  <h3>Business Hours</h3>
+                  <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 4pm<br>Sunday: Closed</p>
+                </div>
+              </div>
+              
+              <div class="social-links">
+                <a href="https://x.com/ASabuur12?t=z8r18E0S3ebugtlPGjWL7Q&s=09" class="social-link">
+                  <i class="bi bi-twitter-x"></i>
+                </a>
+                <a href="https://www.facebook.com/adetayo.abdul.sabuur.olamilekan" class="social-link">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.tiktok.com/@sabuur9?_t=ZS-8yxK3JQpCpL&_r=1" class="social-link">
+                  <i class="bi bi-tiktok"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bi bi-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="container">
+        <div class="section-title text-center mb-5">
+          <h2>Find Me Here</h2>
+          <p>Visit my office or send me a message to schedule a meeting</p>
+        </div>
+        
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15833.695522053451!2d3.9727243330165836!3d7.192380030840332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10399963172b176b%3A0x4233ef31e86bedd6!2sJegede%2C%20Oyo!5e0!3m2!1sen!2sng!4v1755490670937!5m2!1sen!2sng" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-title text-center mb-5">
+          <h2>Frequently Asked Questions</h2>
+          <p>Find answers to common questions about working with me</p>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="faq-item">
+              <button class="faq-question">
+                How quickly do you respond to messages?
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>I typically respond to messages within 24 hours during business days. For urgent matters, you can reach me by phone at +234 90 3266 3804.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                Do you work with international clients?
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Yes! I work with clients from all over the world. Communication is primarily through email, video calls, and project management tools, making location no barrier to collaboration.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                What information should I include in my message?
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Please include your project goals, timeline, budget range, and any specific requirements. The more details you provide, the better I can understand your needs and provide an accurate response.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="faq-item">
+              <button class="faq-question">
+                Do you offer consultations?
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Yes, I offer free 30-minute consultations to discuss your project and determine if we're a good fit to work together. This helps ensure we can meet your expectations.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                How do you handle project payments?
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Payment terms are typically 50% upfront and 50% upon completion. For larger projects, we can arrange milestone-based payments. I accept bank transfers, credit cards, and mobile payments.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                Can you help with existing projects?
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Absolutely! I can help redesign, add features, fix issues, or provide maintenance for existing websites and applications. I'll first assess your current project and provide recommendations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">@2025</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        Designed by <a href="#">Adetayo Tech Venture</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- Custom Contact Page Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // FAQ Accordion
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+          const answer = this.nextElementSibling;
+          const isActive = this.classList.contains('active');
+          
+          // Close all FAQ items
+          faqQuestions.forEach(q => {
+            q.classList.remove('active');
+            q.nextElementSibling.classList.remove('active');
+          });
+          
+          // Open clicked item if it wasn't active
+          if (!isActive) {
+            this.classList.add('active');
+            answer.classList.add('active');
+          }
+        });
+      });
+      
+      // Form submission
+      const contactForm = document.getElementById('contactForm');
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Simple validation
+        if (!name || !email || !message) {
+          errorMessage.style.display = 'block';
+          successMessage.style.display = 'none';
+          return;
+        }
+        
+        // Here you would normally send the data to a server
+        // For this example, we'll simulate a successful submission
+        setTimeout(() => {
+          successMessage.style.display = 'block';
+          errorMessage.style.display = 'none';
+          contactForm.reset();
+          
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            successMessage.style.display = 'none';
+          }, 5000);
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adetayo Abdul-Sabuur - Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .resume-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .resume-header {
+            background:#040b14;
+            color: white;
+            padding: 50px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .resume-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+           
+            background-size: cover;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.3);
+            margin: 0 auto 20px;
+            overflow: hidden;
+            background: url('assets/img/my-profile-img.jpg') center/cover;
+        }
+        
+        .resume-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .resume-header .title {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .resume-body {
+            padding: 50px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            font-size: 1.3rem;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #e9ecef;
+        }
+        
+        .experience-item:last-child, .education-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        
+        .item-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        
+        .item-company {
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .item-date {
+            font-size: 0.9rem;
+            color: #6c757d;
+            background: #f8f9fa;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+        
+        .item-description {
+            color: #555;
+            margin-top: 10px;
+        }
+        
+        .item-description ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        
+        .item-description li {
+            margin-bottom: 5px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .skill-category {
+            margin-bottom: 20px;
+        }
+        
+        .skill-category h4 {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #495057;
+        }
+        
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .skill-name {
+            font-weight: 500;
+        }
+        
+        .skill-level {
+            display: flex;
+            gap: 3px;
+        }
+        
+        .skill-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #e9ecef;
+        }
+        
+        .skill-dot.active {
+            background: #667eea;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .project-tech {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+        
+        .certification-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .certification-icon {
+            font-size: 2rem;
+            color: #667eea;
+        }
+        
+        .certification-info h4 {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .certification-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .language-item {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .language-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .language-level {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        @media (max-width: 768px) {
+            .resume-container {
+                margin: 20px;
+                border-radius: 0;
+            }
+            
+            .resume-header {
+                padding: 30px 20px;
+            }
+            
+            .resume-header h1 {
+                font-size: 2rem;
+            }
+            
+            .resume-body {
+                padding: 30px 20px;
+            }
+            
+            .skills-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .languages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header Section -->
+        <div class="resume-header">
+            <div class="profile-img"></div>
+            <h1>ADETAYO ABDUL-SABUUR.A</h1>
+            <div class="title">UI/UX Designer & Web Developer</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="bi bi-telephone"></i>
+                    <span>+234 90 3266 3804</span>
+                </div>
+                <div class="contact-item">
+                    <i class="bi bi-envelope"></i>
+                    <span>adetayotechventure@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>Ibadan, Nigeria</span>
+                </div>
+                <div class="contact-item">
+                    <i class="bi bi-globe"></i>
+                    <span>www.adetayoportfolio.com</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Body Section -->
+        <div class="resume-body">
+            <!-- Professional Summary -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="bi bi-person"></i>
+                    Professional Summary
+                </h2>
+                <p>
+                    Creative and detail-oriented UI/UX Designer and Web Developer with 3+ years of experience in creating 
+                    responsive, user-friendly websites and applications. Proficient in HTML, CSS, JavaScript, PHP, and MySQL 
+                    with a strong foundation in design principles. Passionate about transforming ideas into functional digital 
+                    experiences that solve real-world problems. Founder of Adetayo Tech Venture, delivering innovative web 
+                    solutions to clients across various industries.
+                </p>
+            </div>
+            
+            <!-- Experience Section -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="bi bi-briefcase"></i>
+                    Work Experience
+                </h2>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Founder & Lead Developer</div>
+                            <div class="item-company">Adetayo Tech Venture</div>
+                        </div>
+                        <div class="item-date">2025 - Present</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Founded and manage a tech startup focused on web development and digital solutions</li>
+                            <li>Lead a team of developers in creating custom websites and applications for clients</li>
+                            <li>Responsible for project management, client relations, and technical architecture</li>
+                            <li>Successfully delivered 15+ projects with positive client feedback</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Web Developer</div>
+                            <div class="item-company">Self-Employed</div>
+                        </div>
+                        <div class="item-date">2025 - Present</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Designed and developed responsive websites and web applications for multiple clients</li>
+                            <li>Specialized in e-commerce solutions and content management systems</li>
+                            <li>Collaborated with clients to understand requirements and deliver tailored solutions</li>
+                            <li>Maintained and updated existing websites for optimal performance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Web Design Intern</div>
+                            <div class="item-company">WINTECH IT Solutions</div>
+                        </div>
+                        <div class="item-date">2024 - PRESENT</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Assisted senior developers in creating and maintaining client websites</li>
+                            <li>Gained hands-on experience with modern web technologies and best practices</li>
+                            <li>Contributed to several successful projects and learned about the full development lifecycle</li>
+                            <li>Participated in team meetings and provided creative input on design solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education Section -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="bi bi-mortarboard"></i>
+                    Education
+                </h2>
+                
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">National Diploma in Computer Science</div>
+                            <div class="item-company">Winifred School Of Managnment, Ibadan</div>
+                        </div>
+                        <div class="item-date">2024 - Present</div>
+                    </div>
+                    <div class="item-description">
+                        <p>Focused on software development, database management, and web technologies. 
+                        Maintained a GPA of 3.8/4.0 and participated in various coding competitions.</p>
+                    </div>
+                </div>
+                
+                
+            
+            <!-- Skills Section -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="bi bi-tools"></i>
+                    Skills
+                </h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <div class="skill-item">
+                            <div class="skill-name">HTML5</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">CSS3</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">JavaScript</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot"></div>
+                                <div class="skill-dot"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">PHP</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Design & Tools</h4>
+                        <div class="skill-item">
+                            <div class="skill-name">UI/UX Design</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Atom</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot"></div>
+                                <div class="skill-dot"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">VS Code</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Sublime Text</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot"></div>
+                                <div class="skill-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Frameworks & Libraries</h4>
+                        <div class="skill-item">
+                            <div class="skill-name">Bootstrap</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">jQuery</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot"></div>
+                                <div class="skill-dot"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">React</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot"></div>
+                                <div class="skill-dot"></div>
+                                <div class="skill-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Database & Others</h4>
+                        <div class="skill-item">
+                            <div class="skill-name">MySQL</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Git & GitHub</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot"></div>
+                                <div class="skill-dot"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">RESTful APIs</div>
+                            <div class="skill-level">
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot active"></div>
+                                <div class="skill-dot"></div>
+                                <div class="skill-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Projects Section -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="bi bi-folder"></i>
+                    Key Projects
+                </h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-title">E-Commerce Platform</div>
+                        <div class="project-tech">HTML, CSS, JavaScript, PHP, MySQL</div>
+                        <p>Developed a full-stack e-commerce solution with product catalog, shopping cart, 
+                        and payment integration. Implemented responsive design and user authentication.</p>
+                    </div>
+                    
+                   
+                    
+                    <div class="project-card">
+                        <div class="project-title">Portfolio Website</div>
+                        <div class="project-tech">HTML, CSS, JavaScript, Bootstrap</div>
+                        <p>Designed and developed a responsive portfolio website showcasing projects and skills. 
+                        Implemented smooth animations and optimized for performance.</p>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-title">Blog Platform</div>
+                        <div class="project-tech">PHP, MySQL, Bootstrap</div>
+                        <p>Built a content management system for bloggers with admin panel, user comments, 
+                        and SEO optimization. Features include category management and search functionality.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certifications Section -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="bi bi-award"></i>
+                    Certifications
+                </h2>
+                
+                <div class="certification-item">
+                    <i class="bi bi-patch-check-fill certification-icon"></i>
+                    <div class="certification-info">
+                        <h4>Full Stack Web Development</h4>
+                        <p>The Web Academy • 2022</p>
+                    </div>
+                </div>
+                
+                <div class="certification-item">
+                    <i class="bi bi-shield-check certification-icon"></i>
+                    <div class="certification-info">
+                        <h4>Web Security Fundamentals</h4>
+                        <p>CyberSafe Institute • 2023</p>
+                    </div>
+                </div>
+                
+                <div class="certification-item">
+                    <i class="bi bi-phone certification-icon"></i>
+                    <div class="certification-info">
+                        <h4>Responsive Web Design</h4>
+                        <p>Design Masters • 2021</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Languages Section -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="bi bi-translate"></i>
+                    Languages
+                </h2>
+                
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <div class="language-name">English</div>
+                        <div class="language-level">Fluent</div>
+                    </div>
+                    
+                    <div class="language-item">
+                        <div class="language-name">Yoruba</div>
+                        <div class="language-level">Native</div>
+                    </div>
+                    
+                    <div class="language-item">
+                        <div class="language-name">Arabic</div>
+                        <div class="language-level">Basic</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

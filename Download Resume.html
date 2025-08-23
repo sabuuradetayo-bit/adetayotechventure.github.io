@@ -1,0 +1,194 @@
+<!-- Download Resume Section -->
+<section id="download-resume" class="download-resume section">
+  <div class="container">
+    <div class="download-content">
+      <div class="download-icon">
+        <i class="bi bi-file-earmark-pdf"></i>
+      </div>
+      <h2>Download My Resume</h2>
+      <p>Get a comprehensive overview of my skills, experience, and qualifications</p>
+      <div class="download-buttons">
+        <a href="resumepdf.html" class="download-btn primary">
+          <i class="bi bi-download me-2"></i> Download PDF
+        </a>
+        <a href="404page.html" class="download-btn secondary">
+          <i class="bi bi-eye me-2"></i> View Online
+        </a>
+      </div>
+      <div class="download-info">
+        <div class="info-item">
+          <i class="bi bi-file-earmark-text"></i>
+          <span>2 Pages</span>
+        </div>
+        <div class="info-item">
+          <i class="bi bi-calendar3"></i>
+          <span>Updated: June 2025</span>
+        </div>
+        <div class="info-item">
+          <i class="bi bi-filetype-pdf"></i>
+          <span>PDF Format</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Download Resume Section Styles */
+  .download-resume {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-resume::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    animation: float 20s infinite linear;
+  }
+
+  @keyframes float {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .download-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .download-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .download-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .download-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+  }
+
+  .download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .download-btn.primary {
+    background: white;
+    color: #667eea;
+  }
+
+  .download-btn.primary:hover {
+    background: transparent;
+    color: white;
+    border-color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  .download-btn.secondary {
+    background: transparent;
+    color: white;
+    border-color: white;
+  }
+
+  .download-btn.secondary:hover {
+    background: white;
+    color: #667eea;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  .download-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.8;
+  }
+
+  .info-item i {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .download-content h2 {
+      font-size: 2rem;
+    }
+    
+    .download-content p {
+      font-size: 1rem;
+    }
+    
+    .download-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .download-btn {
+      width: 80%;
+      max-width: 300px;
+      justify-content: center;
+    }
+    
+    .download-info {
+      gap: 20px;
+    }
+  }
+</style>

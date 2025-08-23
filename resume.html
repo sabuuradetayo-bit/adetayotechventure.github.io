@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Resume - Adetayo Abdul-Sabuur.A</title>
+  <meta content="Resume of Adetayo Abdul-Sabuur.A, UI/UX Designer & Web Developer" name="description">
+  <meta content="Adetayo, Abdul-Sabuur, Resume, CV, UI/UX Designer, Web Developer" name="keywords">
+
+  <link href="assets/img/favicon.png" rel="icon">
+  
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+ 
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Custom Resume Page Styles -->
+  <style>
+    .resume-section {
+      position: relative;
+      padding: 40px 0;
+    }
+    
+    .resume-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: #e0e0e0;
+    }
+    
+    .resume-item {
+      position: relative;
+      width: 50%;
+      padding: 0 40px;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+    }
+    
+    .resume-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+    
+    .resume-item:nth-child(even) {
+      left: 50%;
+    }
+    
+    .resume-content {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    
+    .resume-item::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      width: 20px;
+      height: 20px;
+      background: #4a90e2;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .resume-item:nth-child(odd)::before {
+      right: -10px;
+    }
+    
+    .resume-item:nth-child(even)::before {
+      left: -10px;
+    }
+    
+    .resume-date {
+      display: inline-block;
+      background: #4a90e2;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+    
+    .resume-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    
+    .resume-company {
+      font-weight: 500;
+      color: #4a90e2;
+      margin-bottom: 10px;
+    }
+    
+    .resume-description {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .education-item {
+      background: white;
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    
+    .education-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .education-icon {
+      font-size: 2.5rem;
+      color: #4a90e2;
+      margin-bottom: 15px;
+    }
+    
+    .skill-category {
+      margin-bottom: 30px;
+    }
+    
+    .skill-category h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: #333;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .skill-category h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: #4a90e2;
+    }
+    
+    .skill-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .skill-name {
+      font-weight: 500;
+    }
+    
+    .skill-level {
+      display: flex;
+      align-items: center;
+    }
+    
+    .skill-dots {
+      display: flex;
+      margin-left: 10px;
+    }
+    
+    .skill-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-left: 5px;
+      background: #e0e0e0;
+    }
+    
+    .skill-dot.active {
+      background: #4a90e2;
+    }
+    
+    .certification-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s;
+    }
+    
+    .certification-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .certification-icon {
+      font-size: 3rem;
+      color: #4a90e2;
+      margin-right: 20px;
+    }
+    
+    .certification-info h4 {
+      margin-bottom: 5px;
+    }
+    
+    .certification-info p {
+      margin: 0;
+      color: #666;
+    }
+    
+    .download-resume {
+      text-align: center;
+      margin: 50px 0;
+    }
+    
+    .download-btn {
+      display: inline-block;
+      background: #4a90e2;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .download-btn:hover {
+      background: #3a7bc8;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .resume-section::before {
+        left: 20px;
+      }
+      
+      .resume-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 20px;
+        text-align: left !important;
+      }
+      
+      .resume-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .resume-item::before {
+        left: 10px;
+      }
+    }
+  </style>
+</head>
+<body class="resume-page">
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Adetayo Abdul-Sabuur.A</h1>
+    </a>
+    <div class="social-links text-center">
+      <a href="https://x.com/ASabuur12?t=z8r18E0S3ebugtlPGjWL7Q&s=09" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.facebook.com/adetayo.abdul.sabuur.olamilekan" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.tiktok.com/@sabuur9?_t=ZS-8yxK3JQpCpL&_r=1" class="tiktok"><i class="bi bi-tiktok"></i></a>
+      <a href="#" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+    </div>
+      <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="About.html"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="resume.html"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="portfolio.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="services.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+       
+        <li><a href="contact.html"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">My Resume</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Resume</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- Education Section -->
+    <section id="education" class="education section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Education</h2>
+        <p>My academic background and qualifications</p>
+      </div>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="education-item">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-mortarboard-fill education-icon"></i>
+                <div class="ms-3">
+                  <h3>National Diploma in Software Engineering</h3>
+                  <div class="resume-date">2024 - Present</div>
+                  <p class="mb-2">Winifred School Of Managnment, Ibadan</p>
+                  <p class="resume-description">
+                    Focused on software development, database management, and web technologies. 
+                    Maintained a GPA of 3.5/4.0 and participated in various coding competitions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+         
+          <div class="col-lg-6">
+            <div class="education-item">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-database-fill education-icon"></i>
+                <div class="ms-3">
+                  <h3>Project Managnment</h3>
+                  <div class="resume-date">2025</div>
+                  <p class="mb-2">Wintech It Solution Academy</p>
+                  <p class="resume-description">
+                   Experienced in managing complex projects, and delivering results within scope, time, and budget. Skilled in Agile and Waterfall methodologies, risk management, stakeholder communication and  to ensure quality outcomes and continuous improvement.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Experience</h2>
+        <p>My professional journey and work history</p>
+      </div>
+      
+      <div class="container">
+        <div class="resume-section">
+          <div class="resume-item">
+            <div class="resume-content">
+              <div class="resume-date">2025 - Present</div>
+              <h3 class="resume-title">Founder & Lead Developer</h3>
+              <div class="resume-company">Adetayo Tech Venture</div>
+              <p class="resume-description">
+                Founded and manage a tech startup focused on web development and digital solutions. 
+                Lead a team of developers in creating custom websites and applications for clients 
+                across various industries. Responsible for project management, client relations, 
+                and technical architecture.
+              </p>
+            </div>
+          </div>
+          
+          <div class="resume-item">
+            <div class="resume-content">
+              <div class="resume-date">2024 - Present</div>
+              <h3 class="resume-title">Web Developer</h3>
+              <div class="resume-company">Self-Employed</div>
+              <p class="resume-description">
+                Worked with multiple clients to design and develop responsive websites and web applications. 
+                Specialized in e-commerce solutions and content management systems. Successfully completed 
+                over 15 projects with positive client feedback.
+              </p>
+            </div>
+          </div>
+          
+          <div class="resume-item">
+            <div class="resume-content">
+              <div class="resume-date">2024 - Present</div>
+              <h3 class="resume-title">Project Manager</h3>
+              <div class="resume-company">Wintech It Solutions</div>
+              <p class="resume-description">
+               As a Project Manager, I assisted senior project managers in planning, organizing, and overseeing project activities. This provided me with valuable exposure to how projects are structured and managed from start to finish.
+              </p>
+            </div>
+          </div>
+          
+          <div class="resume-item">
+            <div class="resume-content">
+              <div class="resume-date">2024 - Present</div>
+              <h3 class="resume-title">Junior Developer</h3>
+              <div class="resume-company">Wintech It Solutions</div>
+              <p class="resume-description">
+                Started as a junior developer focusing on front-end development. Worked on improving 
+                user interfaces and implementing responsive designs. Collaborated with the design team 
+                to bring creative concepts to life.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Professional Skills</h2>
+        <p>Technical expertise and competencies</p>
+      </div>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="skill-category">
+              <h3>Programming Languages</h3>
+              <div class="skill-item">
+                <div class="skill-name">HTML5</div>
+                <div class="skill-level">
+                  <div class="skill-dots">
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">CSS3</div>
+                <div class="skill-level">
+                  <div class="skill-dots">
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-level">
+                  <div class="skill-dots">
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot"></div>
+                    <div class="skill-dot"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">PHP</div>
+                <div class="skill-level">
+                  <div class="skill-dots">
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h3>Frameworks & Libraries</h3>
+              <div class="skill-item">
+                <div class="skill-name">Bootstrap</div>
+                <div class="skill-level">
+                  <div class="skill-dots">
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">jQuery</div>
+                <div class="skill-level">
+                  <div class="skill-dots">
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot"></div>
+                    <div class="skill-dot"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">React</div>
+                <div class="skill-level">
+                  <div class="skill-dots">
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot"></div>
+                    <div class="skill-dot"></div>
+                    <div class="skill-dot"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="skill-category">
+              <h3>Design & Tools</h3>
+              <div class="skill-item">
+                <div class="skill-name">UI/UX Design</div>
+                <div class="skill-level">
+                  <div class="skill-dots">
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">Scrimba</div>
+                <div class="skill-level">
+                  <div class="skill-dots">
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot"></div>
+                    <div class="skill-dot"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">Adobe Photoshop</div>
+                <div class="skill-level">
+                  <div class="skill-dots">
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">codepen</div>
+                <div class="skill-level">
+                  <div class="skill-dots">
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot"></div>
+                    <div class="skill-dot"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h3>Database & Others</h3>
+              <div class="skill-item">
+                <div class="skill-name">MySQL</div>
+                <div class="skill-level">
+                  <div class="skill-dots">
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                  </div>
+                </div>
+              </div>
+             
+              <div class="skill-item">
+                <div class="skill-name">RESTful APIs</div>
+                <div class="skill-level">
+                  <div class="skill-dots">
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot active"></div>
+                    <div class="skill-dot"></div>
+                    <div class="skill-dot"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Certifications</h2>
+        <p>Professional certifications and achievements</p>
+      </div>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="certification-card">
+              <i class="bi bi-award-fill certification-icon"></i>
+              <div class="certification-info">
+                <h4>Full Stack Web Development</h4>
+                <p>The Web Academy • 2025</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="certification-card">
+              <i class="bi bi-shield-fill-check certification-icon"></i>
+              <div class="certification-info">
+                <h4>Web Security Fundamentals</h4>
+                <p>CyberSafe Institute • 2025</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="certification-card">
+              <i class="bi bi-phone-fill certification-icon"></i>
+              <div class="certification-info">
+                <h4>Responsive Web Design</h4>
+                <p>Design Masters • 2025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Resume Section -->
+    <section id="download-resume" class="download-resume section">
+      <div class="container">
+        <h2>Download My Resume</h2>
+        <p>Get a printable PDF version of my complete resume</p>
+        <a href="Download Resume.html" class="download-btn">
+          <i class="bi bi-download me-2"></i> Download Resume
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">@2025</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        Designed by <a href="#">Adetayo Tech Venture</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
